@@ -1,0 +1,10 @@
+# Définir manuellement les langages de ton dépôt
+
+# Force la détection de C++
+* linguist-language=C++
+
+# Force aussi la détection de C# pour certains fichiers
+*.cs linguist-language=C#
+
+# Force aussi Python
+*.py linguist-language=Python
