@@ -15,8 +15,6 @@ Une bibliothèque Arduino ultra-optimisée pour la communication série industri
 - **⚡ Mémoire Optimisée** : Utilisation exclusive de C-strings (pas de String Arduino)
 - **🔧 Architecture Événementielle** : Système de callbacks asynchrone
 - **🏭 Industrie 4.0** : Conforme aux exigences des applications industrielles critiques
-- **🔍 Débogage Avancé** : Outils de diagnostic intégrés
-- **🔄 Gestion d'Erreurs** : Système complet de détection et récupération
 
 ## 📦 Installation
 
@@ -27,11 +25,42 @@ Une bibliothèque Arduino ultra-optimisée pour la communication série industri
 4. Cliquez sur "Installer"
 
 ### Méthode 2 : Installation Manuelle
-1. Téléchargez la dernière version [ici](https://github.com/yourusername/SchreinSerialParser/releases)
+1. Téléchargez la dernière version [ici](https://github.com/votrenom/SchreinSerialParser/releases)
 2. Extrayez le ZIP dans votre dossier `Arduino/libraries/`
 3. Redémarrez l'IDE Arduino
 
-### Méthode 3 : PlatformIO
-```ini
-lib_deps =
-    https://github.com/yourusername/SchreinSerialParser.git
+## 🎯 Démarrage Rapide
+
+```cpp
+#include <SchreinSerialParser.h>
+
+SchreinSerialParser parser(Serial);
+
+void setup() {
+  Serial.begin(9600);
+  
+  parser.setTimeout(1000);
+  parser.enableChecksum(true);
+  
+  parser.onFrameParsed([](const char* control, const char* key, const char* value) {
+    Serial.print("Reçu: ");
+    Serial.print(control);
+    Serial.print(".");
+    Serial.print(key);
+    Serial.print(" = ");
+    Serial.println(value);
+  });
+}
+
+void loop() {
+  parser.loop();
+  
+  // Envoyer une commande
+  static unsigned long lastSend = 0;
+  if (millis() - lastSend > 2000) {
+    String cmd = SchreinSerialParser::command("sensor", "read_temp", "");
+    parser.sendFrame(cmd.c_str());
+    lastSend = millis();
+  }
+}
+
