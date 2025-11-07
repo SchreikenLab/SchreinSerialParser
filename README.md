@@ -18,14 +18,8 @@ Une bibliothèque Arduino ultra-optimisée pour la communication série industri
 
 ## 📦 Installation
 
-### Méthode 1 : Gestionnaire de Bibliothèque Arduino
-1. Ouvrez l'IDE Arduino
-2. Allez dans `Outils` → `Gérer les bibliothèques...`
-3. Recherchez "SchreinSerialParser"
-4. Cliquez sur "Installer"
-
-### Méthode 2 : Installation Manuelle
-1. Téléchargez la dernière version [ici](https://github.com/votrenom/SchreinSerialParser/releases)
+### Installation Manuelle
+1. Téléchargez la dernière version
 2. Extrayez le ZIP dans votre dossier `Arduino/libraries/`
 3. Redémarrez l'IDE Arduino
 
@@ -64,3 +58,5 @@ void loop() {
   }
 }
 
+## 📋 Documentation
+ [Voir](https://schreiken.tech/schreinserialpaser/)
