@@ -62,6 +62,6 @@ void loop() {
 
 ### 📋 Complete Documentation
 For detailed documentation, advanced examples and complete usage guide, visit:  
-**https://schreiken.tech/schreinserialparser/**
+**https://schreiken.tech/schreinserialpaser/**
 
 *Documentation is regularly updated with new examples and features.*
