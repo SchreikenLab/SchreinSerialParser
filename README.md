@@ -64,19 +64,4 @@ void loop() {
 For detailed documentation, advanced examples and complete usage guide, visit:  
 **https://schreiken.tech/schreinserialparser/**
 
-### 📖 What you'll find in the documentation:
-- 🚀 **Quick start guide**
-- 📚 **Complete API reference** 
-- 🏭 **Advanced industrial examples**
-- 🔧 **Troubleshooting guide**
-- 📊 **Performance benchmarks**
-- 🎯 **Best practices**
-
-### 💡 Main features:
-- ✅ **Integrated Checksum validation**
-- ⏱️ **Configurable timeout management**
-- 📡 **Event-driven architecture** with callbacks
-- 💾 **Memory optimization** (no fragmentation)
-- 🏭 **Industrial standards compliant**
-
 *Documentation is regularly updated with new examples and features.*
